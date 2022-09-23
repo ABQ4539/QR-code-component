@@ -1,15 +1,32 @@
-* {
-    margin: 0;
-    padding: 0;
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/* Set core root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
+}
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
 }
 
-
+:root {
+    --container-bg: hsl(0, 0%, 100%);
+    --bg-color: hsl(212, 45%, 89%);
+    --p-color: hsl(220, 15%, 55%);
+    --h1-color: hsl(218, 44%, 22%);
+}
 
 body {
-    background-color: hsl(212, 45%, 89%);
-    font-family: 'Outfit', sans-serif;
-    font-size: 15px;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
     min-height: 100vh;
+    background-color: var(--bg-color);
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -17,33 +34,34 @@ body {
 }
 
 .container {
-    background-color: hsl(0, 0%, 100%);
+    background-color: var(--container-bg);
     max-width: 300px;
-    padding: 18px;
-    border-radius: 15px;
+    padding: 1rem;
+    border-radius: 1rem;
     margin: 0px auto 20px auto;
 }
 
 img {
     width: 100%;
-    border-radius: 15px;
+    display: block;
+    border-radius: 12px;
 }
 
 .text {
-    width: 280px;
     text-align: center;
     margin: 0 auto;
-    padding: 20px 8px;
+    padding: 8px 0;
 }
 
-.text h2 {
-    padding-bottom: 15px;
-    color: hsl(218, 44%, 22%);
+.text h1 {
+    font-size: 1.4rem;
+    padding-bottom: 3px;
+    color: var(--h1-color);
 }
 
 .text p {
-    color: hsl(220, 15%, 55%);
-    margin-bottom: 15px;
+    color: var(--p-color);
+    margin-bottom: 0.9rem;
 }
 
 .attribution { 
